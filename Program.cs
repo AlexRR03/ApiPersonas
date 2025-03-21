@@ -11,10 +11,11 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.MapOpenApi();
 }
+    app.MapOpenApi();
 
 app.UseHttpsRedirection();
+app.UseSwaggerUI(options => options.SwaggerEndpoint("/openapi/v1.json","ApiPersonas"));
 
 app.UseAuthorization();
 
